@@ -8,43 +8,52 @@ import CameraAltTwoToneIcon from '@mui/icons-material/CameraAltTwoTone';
 
 
 export default function ProfileCard(props) {
-  return (
-    <Box sx={{background: "#f1f5f9", height: "100%"}} display="flex"
-    justifyContent="center"
-    minHeight="100vh">
-        <Stack>
-            <Card raised="true" sx={{ minWidth: 200, minHeight: 200, mt: 10, boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}}>
-                <CardCover>
-                    <img
-                        src="avatar.jpg"
-                        alt=""
-                    />
-                </CardCover>
-                <CardContent>
-                    <IconButton
-                        variant="solid"
-                        size="lg"
-                        sx={{
-                            position: 'absolute',
-                            zIndex: 2,
-                            borderRadius: '10px',
-                            right: '0rem',
-                            bottom: '1rem',
-                            transform: 'translateX(50%)',
-                            backgroundColor: 'white'
-                        }}
-                    >
-                        <CameraAltTwoToneIcon />
-                    </IconButton>
-                </CardContent>
-            </Card>
-            <Typography level="h1" sx={{ fontWeight: 700, color: 'black', mt: 3 }}>
-                {props.firstName}
-            </Typography>
-            <Typography level="body2" sx={{ fontWeight: 400, mt: 1, mb: 2 }}>
-                {props.email}
-            </Typography>
-        </Stack>
-    </Box>
-  );
+    React.useEffect(() => {
+        console.log(props)
+    }, [props]);
+    return (
+        <Box sx={{background: "#f1f5f9", height: "100%"}} display="flex"
+        justifyContent="center"
+        minHeight="100vh">
+            <Stack>
+                <Card raised="true" sx={{ minWidth: 200, minHeight: 200, mt: 10, boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}}>
+                    <CardCover>
+                        <img
+                            src="avatar.jpg"
+                            alt=""
+                        />
+                    </CardCover>
+                    <CardContent>
+                        <IconButton
+                            variant="solid"
+                            size="lg"
+                            sx={{
+                                position: 'absolute',
+                                zIndex: 2,
+                                borderRadius: '10px',
+                                right: '0rem',
+                                bottom: '1rem',
+                                transform: 'translateX(50%)',
+                                backgroundColor: 'white'
+                            }}
+                        >
+                            <CameraAltTwoToneIcon />
+                        </IconButton>
+                    </CardContent>
+                </Card>
+                <Typography level="h1" sx={{ fontWeight: 700, color: 'black', mt: 3 }}>
+                    {props.firstName} {props.lastName}
+                </Typography>
+                <Typography level="body2" sx={{ fontWeight: 400, mt: 1}}>
+                    [@{props.displayName}]
+                </Typography>
+                <Typography level="body2" sx={{ fontWeight: 400, mt: 1 }}>
+                    ✉️ {props.email}
+                </Typography>
+                <Typography level="body2" sx={{ fontWeight: 400, mt: 1, mb: 2 }}>
+                    📞 {props.phonePersonal}
+                </Typography>
+            </Stack>
+        </Box>
+    );
 }
