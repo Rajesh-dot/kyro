@@ -7,7 +7,7 @@ import { Box, Stack } from '@mui/material';
 import CameraAltTwoToneIcon from '@mui/icons-material/CameraAltTwoTone';
 
 
-export default function ProfileCard() {
+export default function ProfileCard(props) {
   return (
     <Box sx={{background: "#f1f5f9", height: "100%"}} display="flex"
     justifyContent="center"
@@ -39,10 +39,10 @@ export default function ProfileCard() {
                 </CardContent>
             </Card>
             <Typography level="h1" sx={{ fontWeight: 700, color: 'black', mt: 3 }}>
-                Adam Warlock
+                {props.firstName}
             </Typography>
             <Typography level="body2" sx={{ fontWeight: 400, mt: 1, mb: 2 }}>
-                rajesh@gmail.com
+                {props.email}
             </Typography>
         </Stack>
     </Box>
