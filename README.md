@@ -16,19 +16,19 @@ Source code for Kyro Assignment
     ├── Backend     
     │   ├── Users
     |	|	├── __init__.py
-	|	|	├── main.py					   - Configuration of the app.
-	|	|	├── model.py				   - DB configuration and schema.
-	|	|	└── routes.py				   - Contains the CURD APIs
-    │   ├── main.py						   - Main file to be executed for running the server.
+	|	|	├── main.py		   - Configuration of the app.
+	|	|	├── model.py		   - DB configuration and schema.
+	|	|	└── routes.py		   - Contains the CURD APIs
+    │   ├── main.py				   - Main file to be executed for running the server.
     │   └── requirements.txt			   - Contains required python packages
     └──  kyro
 	    ├── Public
-		|   └── avatar.jpg    			   - Profile image
+		|   └── avatar.jpg		   - Profile image
     	├── src
     	|   └── components
-    	|	|	├── ProfileCard.js		   - Component for preview of profile
+    	|	|	├── ProfileCard.js	   - Component for preview of profile
     	|	|	├── ProfileUpdateForm.js   - Component for updating user data
-    	|	|	└── TopBar.js 			   - Component for nav bar
-    	|	└── App.js					   - Main page
+    	|	|	└── TopBar.js 		   - Component for nav bar
+    	|	└── App.js			   - Main page
     	└── Package.json
     	
