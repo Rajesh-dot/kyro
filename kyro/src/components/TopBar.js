@@ -27,9 +27,14 @@ import {
 	MenuRounded,
 	ArrowDropDownRounded,
 	AddRounded,
-	Inbox,
-	Mail,
-	ChevronLeft
+	ChevronLeft,
+    HomeRounded,
+    GridViewRounded,
+    ForumRounded,
+    CorporateFareRounded,
+    SettingsRounded,
+    FilePresentRounded,
+    AssignmentRounded,
 } from '@mui/icons-material';
 
 
@@ -79,22 +84,87 @@ function TopBar() {
 				open={open}
 			>
 				<DrawerHeader>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="/"
+                        sx={{
+                        ml: 5,
+                        mr: 'auto',
+                        display: { xs: 'none', md: 'flex' },
+                        fontFamily: 'monospace',
+                        fontWeight: 700,
+                        letterSpacing: '.3rem',
+                        color: 'black',
+                        textDecoration: 'none',
+                        }}
+                    >
+                        KYRO
+                    </Typography>
 					<IconButton onClick={handleDrawerClose}>
 						<ChevronLeft />
 					</IconButton>
 				</DrawerHeader>
 				<Divider />
 				<List>
-					{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-						<ListItem key={text} disablePadding>
-						<ListItemButton>
-							<ListItemIcon>
-							{index % 2 === 0 ? <Inbox /> : <Mail />}
-							</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItemButton>
-						</ListItem>
-					))}
+                    <ListItem key="Home" disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <HomeRounded />
+                            </ListItemIcon>
+                            <ListItemText primary="Home" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key="Projects" disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <AssignmentRounded />
+                            </ListItemIcon>
+                            <ListItemText primary="Projects" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key="Dashboard" disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <GridViewRounded />
+                            </ListItemIcon>
+                            <ListItemText primary="Dashboard" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key="Messages" disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <ForumRounded />
+                            </ListItemIcon>
+                            <ListItemText primary="Messages" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key="Docuements" disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <FilePresentRounded />
+                            </ListItemIcon>
+                            <ListItemText primary="Documents" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key="Organization" disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <CorporateFareRounded />
+                            </ListItemIcon>
+                            <ListItemText primary="Organization" />
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem key="Settings" disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <SettingsRounded />
+                            </ListItemIcon>
+                            <ListItemText primary="Settings" />
+                        </ListItemButton>
+                    </ListItem>
+					
 				</List>
 				<Divider />
 			</Drawer>
