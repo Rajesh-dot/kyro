@@ -27,9 +27,12 @@ export default function ProfileUpdateForm() {
 
     React.useEffect(() => {
         // featching user data from the backend
-        fetch('https://kyro.onrender.com/user/01GQSVRKV1MPDPES1QFEKTQ6NB')
-          .then(res => res.json())
-          .then(data => setData(data));
+        const fetchData = () => {
+            fetch('https://kyro.onrender.com/user/01GQSVRKV1MPDPES1QFEKTQ6NB')
+            .then(res => res.json())
+            .then(data => setData(data));
+        }
+        fetchData();
     }, []);
 
     const setData = (data) => {
@@ -55,7 +58,7 @@ export default function ProfileUpdateForm() {
             "location": location
         }
         // updating the user data in the backend
-        fetch('https://kyro.onrender.com/update_user/01GQSVRKV1MPDPES1QFEKTQ6NB', {
+        const updateAPICall = async () => { await fetch('https://kyro.onrender.com/update_user/01GQSVRKV1MPDPES1QFEKTQ6NB', {
             method: 'POST',
             body: JSON.stringify(requestJson),
             headers: {
@@ -65,6 +68,8 @@ export default function ProfileUpdateForm() {
         .then(response => response.json())
         .then(data => setUserData(data))
         .catch(error => console.error(error));
+        };
+        updateAPICall();
         console.log(userData)
     }
 
